@@ -1,0 +1,115 @@
+/* Вариант «графит и шампань»: поверх основного style.css меняет только цвет и характер.
+   Референс — тёмный премиальный лендинг детейлинга (Pinterest 605874956165158621). */
+:root {
+  --navy-950: #0b0b0e;
+  --navy-900: #121216;
+  --navy-800: #1b1b20;
+  --navy-700: #26262c;
+  --accent: #cdb499;
+  --accent-hover: #e2d0b6;
+  --accent-light: #d9c3a5;
+  --ink: #f1ece6;
+  --muted: #8f8a86;
+  --line: rgba(255, 255, 255, .1);
+  --bg: #0d0d10;
+  --gold: linear-gradient(100deg, #a8835d 0%, #ead9c1 46%, #c19f79 100%);
+}
+
+body { background: var(--bg); color: var(--ink); }
+
+.demo-note { background: #1a1713; color: var(--accent); }
+
+.topbar { background: var(--navy-950); color: #b9b3ad; }
+
+.header { background: rgba(18, 18, 22, .92); }
+.nav { font-size: 12.5px; letter-spacing: .08em; text-transform: uppercase; }
+.nav a { color: #d8d4cf; }
+.logo__name { font-weight: 700; letter-spacing: .14em; }
+.logo__sub { color: var(--muted); }
+.logo__mark--stub { border-color: rgba(205, 180, 153, .45); color: var(--accent); background: rgba(205, 180, 153, .05); }
+
+/* Кнопки-«таблетки» с золотым градиентом */
+.btn { border-radius: 999px; font-size: 13px; letter-spacing: .06em; text-transform: uppercase; }
+.btn--accent {
+  background: var(--gold); color: #17130e;
+  box-shadow: 0 10px 30px rgba(205, 180, 153, .22), inset 0 1px 0 rgba(255, 255, 255, .45);
+}
+.btn--accent:hover { background: var(--gold); filter: brightness(1.07); }
+.btn--ghost { border-color: rgba(205, 180, 153, .45); color: #e8dccb; }
+.btn--ghost:hover { border-color: var(--accent); background: rgba(205, 180, 153, .08); }
+.btn--ghost-dark { border-color: var(--line); background: transparent; color: #e8dccb; }
+.btn--ghost-dark:hover { border-color: rgba(205, 180, 153, .45); }
+
+/* Первый экран */
+.hero { background: var(--navy-900); }
+.hero__photo::after {
+  background:
+    linear-gradient(90deg, #121216 0%, rgba(18, 18, 22, .85) 22%, rgba(18, 18, 22, .25) 55%, rgba(18, 18, 22, 0) 75%),
+    linear-gradient(0deg, rgba(18, 18, 22, .8) 0%, rgba(18, 18, 22, 0) 35%);
+}
+.hero__mark {
+  position: absolute; left: 50%; bottom: 18px; transform: translateX(-50%);
+  font-size: clamp(110px, 17vw, 250px); font-weight: 800; line-height: 1; letter-spacing: .1em;
+  color: transparent; -webkit-text-stroke: 1px rgba(205, 180, 153, .09);
+  white-space: nowrap; pointer-events: none; user-select: none;
+}
+
+.eyebrow { border-color: rgba(205, 180, 153, .25); color: #d8cfc4; background: rgba(255, 255, 255, .03); }
+.eyebrow::before { background: var(--accent); }
+
+h1 {
+  font-size: clamp(34px, 3.6vw, 52px); line-height: 1.1; letter-spacing: .01em; text-transform: uppercase;
+  background: var(--gold); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+h1 span { color: #f4f0ea; }
+
+.lead { color: #bdb8b2; }
+.perks li { color: #e9e4de; }
+.perks svg { border-color: rgba(205, 180, 153, .4); color: var(--accent); }
+
+.season { background: rgba(20, 20, 24, .86); border-color: rgba(205, 180, 153, .22); }
+.season__label { color: var(--accent); }
+.season__text { color: #b9b3ad; }
+.season .btn { padding: 0 14px; font-size: 12px; letter-spacing: .04em; }
+
+/* Запись — тёмная карточка */
+.booking {
+  background: #17171b; border: 1px solid rgba(255, 255, 255, .06);
+  box-shadow: 0 30px 70px rgba(0, 0, 0, .55);
+  color-scheme: dark;
+}
+.booking h2 { color: #f4efe8; font-size: 20px; letter-spacing: .03em; text-transform: uppercase; }
+.field__box { background: #0f0f12; border-color: rgba(255, 255, 255, .1); }
+.field__box:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(205, 180, 153, .15); }
+.field__box > svg { color: var(--accent); }
+.field__box select, .field__box input, .svc-btn { color: var(--ink); }
+.field__box select option { background: #17171b; color: var(--ink); }
+.svc-btn.is-empty { color: var(--muted); }
+.booking__sum { background: var(--gold); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.booking__summary b, .svc-pop__sum b { color: var(--ink); }
+.booking__done p { color: #d8d2cb; }
+.booking__notes { border-top-color: rgba(255, 255, 255, .07); }
+
+.svc-pop { background: #1b1b20; border-color: rgba(255, 255, 255, .1); box-shadow: 0 24px 50px rgba(0, 0, 0, .6); }
+.svc-pop__title { color: var(--ink); }
+.svc-row:hover { background: rgba(255, 255, 255, .04); }
+.svc-row__name { color: #ece6df; }
+.svc-row__price { color: var(--accent-hover); }
+.svc-pop__foot { border-top-color: rgba(255, 255, 255, .08); }
+
+@media (max-width: 1000px) {
+  .hero__photo::after {
+    background:
+      linear-gradient(90deg, rgba(18, 18, 22, .96) 0%, rgba(18, 18, 22, .8) 45%, rgba(18, 18, 22, .3) 85%),
+      linear-gradient(0deg, rgba(18, 18, 22, .8) 0%, rgba(18, 18, 22, 0) 40%);
+  }
+  .nav { font-size: 13px; }
+}
+
+@media (max-width: 720px) {
+  .header__phone { background: var(--gold); color: #17130e; }
+  .hero__photo::after { background: linear-gradient(0deg, #121216 0%, rgba(18, 18, 22, .15) 45%, rgba(18, 18, 22, 0) 70%); }
+  .hero__mark { display: none; }
+  h1 { font-size: 30px; }
+  .booking h2 { font-size: 18px; }
+}

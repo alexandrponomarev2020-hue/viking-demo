@@ -151,7 +151,7 @@ h1 span { display: block; color: var(--accent-light); }
 .cta svg { width: 18px; height: 18px; }
 
 .perks { display: flex; flex-wrap: wrap; gap: 14px 30px; margin: 40px 0 0; padding: 0; list-style: none; }
-.perks li { display: flex; align-items: center; gap: 12px; max-width: 240px; font-size: 14px; font-weight: 600; line-height: 1.35; color: #e6ecf5; }
+.perks li { display: flex; flex: 1 1 0; align-items: center; gap: 12px; min-width: 0; font-size: 14px; font-weight: 600; line-height: 1.35; color: #e6ecf5; }
 .perks svg { box-sizing: content-box; width: 22px; height: 22px; padding: 9px; border: 1.5px solid rgba(78, 166, 255, .55); border-radius: 50%; color: var(--accent-light); stroke-width: 1.6; }
 
 /* Карточка сезона */
@@ -353,7 +353,7 @@ h1 span { display: block; color: var(--accent-light); }
   .cta { flex-direction: column; margin-top: 26px; }
   .cta .btn { width: 100%; }
   .perks { flex-direction: column; gap: 12px; margin-top: 28px; }
-  .perks li { max-width: none; }
+  .perks li { flex: none; max-width: none; }
   .perks svg { width: 26px; height: 26px; }
 
   .season { width: 100%; }
